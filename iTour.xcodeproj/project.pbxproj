@@ -12,6 +12,7 @@
 		6AEA74F82C823802009962EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AEA74F72C823802009962EF /* Assets.xcassets */; };
 		6AEA74FB2C823802009962EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AEA74FA2C823802009962EF /* Preview Assets.xcassets */; };
 		6AEA75022C823961009962EF /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEA75012C823961009962EF /* Destination.swift */; };
+		6AEA75062C823FB4009962EF /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEA75052C823FB4009962EF /* EditDestinationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		6AEA74F72C823802009962EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AEA74FA2C823802009962EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6AEA75012C823961009962EF /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		6AEA75052C823FB4009962EF /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				6AEA74F32C823800009962EF /* iTourApp.swift */,
 				6AEA74F52C823800009962EF /* ContentView.swift */,
+				6AEA75052C823FB4009962EF /* EditDestinationView.swift */,
 				6AEA74F72C823802009962EF /* Assets.xcassets */,
 				6AEA74F92C823802009962EF /* Preview Content */,
 				6AEA75012C823961009962EF /* Destination.swift */,
@@ -143,6 +146,7 @@
 				6AEA74F62C823800009962EF /* ContentView.swift in Sources */,
 				6AEA74F42C823800009962EF /* iTourApp.swift in Sources */,
 				6AEA75022C823961009962EF /* Destination.swift in Sources */,
+				6AEA75062C823FB4009962EF /* EditDestinationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
