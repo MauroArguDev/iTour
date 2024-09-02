@@ -10,7 +10,9 @@ import SwiftUI
 
 struct EditDestinationView: View {
     // MARK: - Properties
+    @Environment(\.modelContext) var modelContext
     @Bindable var destination: Destination
+    @State private var newSightName = ""
     
     // MARK: - Body
     var body: some View {
@@ -26,9 +28,38 @@ struct EditDestinationView: View {
                     Text("Must").tag(3)
                 }.pickerStyle(.segmented)
             }
+            
+            Section("Sights") {
+                ForEach(destination.sights) { sight in
+                    Text(sight.name)
+                }.onDelete(perform: deleteDestinations)
+                
+                HStack {
+                    TextField("Add a new sight in \(destination.name)", text: $newSightName)
+                    
+                    Button("Add", action: addSight)
+                }
+            }
         }
         .navigationTitle("Edit Destination")
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    func addSight() {
+        guard newSightName.isEmpty == false else { return }
+        
+        withAnimation {
+            let sight = Sight(name: newSightName)
+            destination.sights.append(sight)
+            newSightName = ""
+        }
+    }
+    
+    func deleteDestinations(_ indexSet: IndexSet) {
+        for index in indexSet {
+            let sight = destination.sights[index]
+            modelContext.delete(sight)
+        }
     }
 }
 

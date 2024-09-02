@@ -20,7 +20,8 @@ struct ContentView: View {
         NavigationStack(path: $path) {
             DestinationListingView(sort: sortOrder, searchString: searchText)
                 .navigationTitle("iTour")
-                .navigationDestination(for: Destination.self, destination: EditDestinationView.init)
+                .navigationDestination(for: Destination.self) { destination in  EditDestinationView(destination: destination)
+                }
                 .searchable(text: $searchText)
                 .toolbar {
                     Button("Add Destination", systemImage: "plus", action: addDestination)
