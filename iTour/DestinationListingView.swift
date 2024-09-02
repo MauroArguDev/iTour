@@ -32,8 +32,14 @@ struct DestinationListingView: View {
         }
     }
     
-    init(sort: SortDescriptor<Destination>) {
-        _destinations = Query(sort: [sort])
+    init(sort: SortDescriptor<Destination>, searchString: String) {
+        _destinations = Query(filter: #Predicate {
+            if searchString.isEmpty {
+                return true
+            } else {
+                return $0.name.localizedStandardContains(searchString)
+            }
+        }, sort: [sort])
     }
     
     func deleteDestinations(_ indexSet: IndexSet) {
@@ -49,7 +55,7 @@ struct DestinationListingView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Destination.self, configurations: config)
-        return DestinationListingView(sort: SortDescriptor(\Destination.name))
+        return DestinationListingView(sort: SortDescriptor(\Destination.name), searchString: "")
             .modelContainer(container)
     } catch {
         fatalError("Failed to create model container")
